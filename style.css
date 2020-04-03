@@ -1,0 +1,209 @@
+@import 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,900&display=swap';
+
+
+/* - Conceito/boas práticas
+    A estilização para o CSS, é feita por meio de seletores que 
+    selecionam elementos do HTML.
+    Sempre use o ; no final de cada linha de código, não é necessário
+    na última linha mas, por via das dúvidas use.
+*/
+/* - Arquivo CSS puro
+    Essa pagina foi criada para melhor utilizar o CSS, tendo envista que deixar
+    esse código direto na pagina index.html, faria o mesmo ficar muito poluído
+*/
+
+/* - Variáveis 
+    A medida que o arquivo CSS aumenta o seu trabalho também aumenta, para "resolver"
+    esse problema, podemos usar as variáveis no arquivo CSS afim de ganar tempo. 
+    Por exemplo, até o momento colocamos a cor dos elementos na mão, poderiamos 
+    melhorar esse tipo de tarefa da seguinte forma, criar uma variável que recebe
+    o código da cor e então utilizar essa variavel, caso a cor não seja a ideal
+    você não vai precisar reescrever o código da cor em cada elemento do CSS
+    o que será necessário será apenas mudar a cor da variavel em questão.
+*/
+
+:root {
+    --color-green: #50fa7b;
+    --color-rocket:  #7159c1;
+}
+
+
+*{
+    /*esse seletor pega a pagina inteira*/
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+       
+body{
+    background: #282a36;
+    color: white;  
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+                
+}
+
+header{
+    padding:32;
+    border-bottom: 1px solid #333;
+    /* O rgba define a transparencia da cor no ultimo parâmetro*/
+    background: rgba(0, 0, 0, 0.1)
+    ;
+}
+
+.links {
+    text-align: center;
+}
+.links a{
+    /*aqui temos um exemplo de cascata do CSS, onde "header div a" 
+        modifica somente a cor dos links, se generalziar colocandno 
+        somente o seletor a{}, todos os link da pagina seão modificados
+        Esse é um dos poderes do CSS, modificar o que vc quiser do 
+        jeito que vc quiser de forma pratica
+    */
+    color: white;
+
+    /*Estilizando fontes e links do menu*/
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 16px;
+    text-decoration:none;
+}
+
+.links a:hover{
+    color: var(--color-green);
+    transition: 1.5s;
+}
+
+      
+
+/*para selecioanr o um ID no html usamos o "#" e uma classe "." */
+#wrapper{ 
+    text-align: center;
+    padding: 32px;
+}
+
+#wrapper img{ 
+    border-radius: 50%;
+    border: 5px solid var(--color-green);
+    margin-bottom: 32px;
+    height: 200px;
+}
+
+#wrapper h1 {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: normal;
+}
+
+#wrapper h2{
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: normal;
+    margin-top: 8px;
+    opacity: 0.50;
+}
+
+#wrapper p {
+   max-width: 500px;
+   margin: 32px auto;
+   font-size: 24px;
+   line-height: 34px;
+}
+
+#wrapper p a {
+    color: var(--color-green);
+}
+
+#links-footer a{
+    border-bottom: 1px solid var(--color-green);
+}
+
+/*=== CARDS ===*/
+
+.cards{
+    max-width: 800px;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card{
+    background-color: var(--color-rocket);
+    display: grid;
+    
+}
+
+.card_image-container img {
+    width: 100%;
+}
+
+.card_content,
+.card_info{
+    margin: 0px auto;
+    padding: 24px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.card_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: end;
+}
+
+.card_price{
+    background-color: var(--color-rocket);
+    filter: brightness(90%);
+    padding: 5px 25px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+/*=== MODAL ===*/
+/* A ideia do modal é abrir um "pop-up" para execuutar o video*/
+
+.modal-overlay{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    /* opacity - serve para sumir com o modal, com isso conseguimos dar o efeito  pop-up*/
+    opacity: 0;
+    /*visibility - esconte todos os efeitos do modal*/
+    visibility: hidden;
+}
+
+.modal{
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal .close-modal{
+    color: black;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/*=== MODAL.ACTIVE ===*/
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 8%;
+}

@@ -1,0 +1,52 @@
+<!--
+       Considerações
+    Vimos o que é comunicação cliente servidor
+    ------------- comunicação HTTP
+    BackEnd - responsavel pela regras de negócio, dados, receber pedidos etc
+    FrontEnd - lado do cliente que solicita dados do servidor, apresentar dados em tela
+    HTML - liguagem de marcação. É a apresentação do conteúdo(texto, imagens, vídeos)
+           a apresentação de conteúdo acotnece nas TAGAS, que podem ter atributos ou
+           classes
+    CSS - liguagem de estilo. É a estilização da sua paresentação(cores,fontes,
+          espaçamentos)
+          os seletores do CSS trabalam com as TAGS HTML
+-->
+
+<!--
+       Instalamos o LiveServer para poder atualizar todas as alterações desse documento
+       e de qualquer outro que quisermos trabalhar no navegador do computador
+-->
+
+<!-- Para começar um HTML devemos declarar seu tipo com a TAG "<!DOCTYPE HTML>"-->
+<!DOCTYPE HTML>
+
+<html>
+       <head>
+              <!--
+                     metadados são instruções para o navegador
+              -->
+              <title>Giam almeida</title>
+              <link rel="stylesheet" href="/style.css">
+       </head>
+       <body>
+              <header>
+                  <div class="links">
+                     <a href="/index.html">Sobre</a>
+                     <a href="/classes.html">Aulas</a> 
+                  </div>               
+              </header>
+              <!-- O nome do ID é um por elemento e não pode se repetir-->
+              <div id=wrapper>
+                     <img src="https://avatars3.githubusercontent.com/u/60437463?s=460&v=4" alt="Giam Almeida">
+                     <!-- O elemento H1 vai até o numero 6, ele serve para elaborar titulos-->
+                     <h1>Giam Almeida</h1>
+                     <h2>Aluno RocketSeat</h2>
+                     <p>Aluno iniciante em programação na escola, focado em aprender HTML, CSS e JavaScript <a href="https://www.rocketseat.com.br" target="_blank">RocketSeat</a> </p>
+              </div>
+              <div id=links-footer class="links" >
+                     <a href="https://github.com/" target="_blacnk">Github</a>
+                     <a href="https://twitter.com/" target="_blacnk">Twitter</a> 
+                     <a href="https://www.linkedin.com/" target="_blacnk">Linkedin</a> 
+                  </div>  
+       </body>
+</html>
